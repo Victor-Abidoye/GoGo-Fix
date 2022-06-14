@@ -10,187 +10,704 @@
             integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <!-- <link
-            href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,300;0,400;0,600;0,700;1,200;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet"> -->
-
         <link
             href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
             rel="stylesheet">
         <link
             href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
             rel="stylesheet">
+        <link rel="stylesheet" type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
         <title>GoGo</title>
         <style>
             * {
-
                 font-family: 'Open Sans', sans-serif;
+            }
+
+            .burger div {
+                width: 33px;
+                height: 3px;
+                background-color: white;
+                margin: 13px;
+            }
+
+            /* .slides {
+                animation: slip 10s linear infinite;
+            }
+
+            @keyframes slip {
+                0% {
+                    transform: translateX(0vw);
+                }
+                100% {
+                    transform: translateX(-187vw);
+                }
+            } */
+
+            .toggle .line1 {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .toggle .line3 {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            @keyframes navFade {
+                from {
+                    opacity: 0;
+                    transform: translateX(-50px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+
+
+
+
+            /* @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap"); */
+
+            /* * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html {
+                font-family: "Montserrat";
+            } */
+
+            .containers {
+                min-height: 100vh;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px 0;
+                background-color: #253647;
+            }
+
+            .timeline {
+                width: 80%;
+                height: auto;
+                max-width: 1000px;
+                margin: 0 auto;
+                position: relative;
+            }
+
+            .timeline ul {
+                list-style: none;
+            }
+
+            .timeline ul li {
+                padding: 20px;
+                background-color: white;
+                color: black;
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
+
+            .timeline ul li:last-child {
+                margin-bottom: 0;
+            }
+
+            .timeline-content h1 {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20.8px;
+                margin-bottom: 10px;
+            }
+
+            .timeline-content p {
+                font-size: 12px;
+                line-height: 18px;
+                font-weight: 400;
+            }
+
+            .timeline-content .date {
+                font-size: 16px;
+                font-weight: 400;
+                margin-bottom: 10px;
+                letter-spacing: 2px;
+                line-height: 28.6px;
+                color: grey;
+            }
+
+            @media only screen and (min-width: 768px) {
+
+                .timeline-content .date {
+                    font-size: 22px;
+                    font-weight: 400;
+                    margin-bottom: 10px;
+                    letter-spacing: 2px;
+                    line-height: 28.6px;
+                    color: white;
+                }
+
+                .timeline:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 2px;
+                    height: 100%;
+                    background-color: white;
+                    /* background-image: linear-gradient(#253647 10%, white 80%, #253647 10%); */
+                }
+
+                .timeline ul li {
+                    width: 50%;
+                    position: relative;
+                    margin-bottom: 50px;
+                }
+
+                .timeline ul li:nth-child(odd) {
+                    float: right;
+                    clear: left;
+                    transform: translateX(30px);
+                    border-radius: 20px;
+                    text-align: left;
+                }
+
+                .timeline ul li:nth-child(even) {
+                    float: left;
+                    clear: right;
+                    transform: translateX(-30px);
+                    border-radius: 20px;
+                    text-align: right;
+                }
+
+                .timeline ul li::before {
+                    content: "";
+                    position: absolute;
+                    height: 20px;
+                    width: 20px;
+                    border-radius: 50%;
+                    background-color: #E79A3B;
+                    top: 0px;
+                }
+
+                .timeline ul li:nth-child(odd)::before {
+                    transform: translate(-50%, -50%);
+                    left: -30px;
+                }
+
+                .timeline ul li:nth-child(even)::before {
+                    transform: translate(50%, -50%);
+                    right: -30px;
+                }
+
+                .timeline ul li:nth-child(odd) .timeline-content .date {
+                    position: absolute;
+                    top: -10px;
+                    /* transform: translateX(-230%); */
+                    left: -165px;
+                }
+
+                .timeline ul li:nth-child(even) .timeline-content .date {
+                    position: absolute;
+                    top: -10px;
+                    /* transform: translateX(770%); */
+                    /* right: -35%; */
+                    right: -165px;
+                }
+
+                /* .timeline ul li:hover::before {
+                    background-color: aqua;
+                } */
             }
         </style>
     </head>
 
     <body>
-        <header class="xl:h-[800px] relative">
-            <nav class="blo xl:flex fixed xl:px-28 w-full xl:h-24 xl:items-center">
-                <h1 class="text-[28px] xl:font-bold">GOGO GROUNDHOGS</h1>
-                <ul class="w-2/4 flex xl:justify-between ml-auto">
+        <header class="h-[80vh] lg:h-[90vh] xl:h-[800px] relative">
+            <nav
+                class=" bg-[#253647]  sm:px-8 px-5 lg:px-12 flex items-center justify-between fixed xl:px-28 w-full h-[65px] md:h-[75px] z-50">
+                <h1 class="font-bold sm:w-[40%]  xl:text-[28px] xl:font-bold text-white md:text-black">GOGO GROUNDHOGS
+                </h1>
+                <ul
+                    class="nav-links hidden h-[200px] absolute top-[54px] left-0 flex-col justify-evenly md:static md:flex md:p-0 md:h-[initial] md:gap-8 lg:gap-14 md:justify-end md:flex-row px-5 md:block  flex md:items-center bg-[#253647] md:bg-inherit w-full">
                     <li><a href="" class="font-semibold text-[18px]">Home</a></li>
                     <li><a href="" class="font-semibold text-[18px]">Benefits</a></li>
                     <li><a href="" class="font-semibold text-[18px]">Roadmap</a></li>
                     <li><a href="" class="font-semibold text-[18px]">Wallet</a></li>
-                    <li><a href=""
-                            class="font-semibold text-[18px] border py-3 px-8 rounded-full xl bg-[#40C9F4] text-white">Pre-Sale</a>
+                    <li
+                        class="fixed bottom-0 left-0 w-full bg-[#253647] font-semibold text-[18px] border py-3 px-8 lg:py-[10px] lg:px-10  rounded-full md:static md:border-neutral-50 md:px-5 md:py-1 md:border-none md:bg-[#40C9F4] md:w-[initial] text-white ">
+                        <a href="">Pre-Sale</a>
                     </li>
                 </ul>
+                <div>
+                    <div class="burger md:hidden">
+                        <div class="line1"></div>
+                        <div class="line3"> </div>
+                    </div>
+                </div>
             </nav>
             <div class="absolute top-0 -z-10 h-1/2 w-full bg-[#91ECED]"></div>
             <div
-                class="w-full h-[70%] absolute bg-[url('/assets/Groundhogs-Header.svg')]  bg-no-repeat bg-cover bottom-0 -z-10 ">
-
+                class="w-full h-[75%] absolute bg-[url('/assets/Groundhogs-Header.svg')]  bg-no-repeat bg-cover bottom-0 -z-10 ">
             </div>
-            <div class="xl:px-28 h-full w-full flex justify-center items-center">
-                <div id="hero" class="w-full">
-                    <div class="flex">
-                        <div class="hero1 xl:w-1/2  flex flex-col gap-12">
-                            <h1 class="text-[54px] font-semibold w-[80%] leading-tight">The Newest Genesis of Utility
-                                and Community</h1>
-                            <p class="text-[18px] font-semibold w-[90%]">GoGo Groundhog pre-sale is coming soon and with
-                                only 2,500 available, grabbing a spot on the whitelist ensures you mint!</p>
-                            <div class="mt-4">
-                                <a href=""
-                                    class="font-semibold text-[18px] border py-3 px-8 rounded-full xl bg-[#40C9F4] text-white">Join
-                                    whitelist</a>
-                                <a href=""
-                                    class="font-semibold text-[18px] border py-3 px-8 rounded-full xl ml-8 border-[#40C9F4] text-white">Discord</a>
-                            </div>
-                        </div>
-                        <div id="hero2" class="xl:w-1/2 relative">
-                            <div
-                                class="xl:h-[370px] xl:w-[260px] rounded-md bg-white xl:p-5 flex-col flex justify-between absolute left-28 transform rotate-[-20deg] ">
-                                <img src="./assets/Hero-hog1.svg" alt="" class="rounded-md">
-                                <p class="text-[16px] text-[#707070] font-semibold">GoGo Groundhogs</p>
-                                <p class="text-[18px] text-[#707070] font-normal">0.035 ETH</p>
-                                <p class="text-[14px] text-[#A1A1A1] font-bold">By Groundhog Team</p>
-                            </div>
-                            <div
-                                class="xl:h-[370px] xl:w-[260px] rounded-md bg-white xl:p-5 flex-col flex justify-between absolute right-0 transform rotate-[20deg] z-20 shadow-2xl">
-                                <img src="./assets/gogo-twitter.svg" alt="" class="rounded-md">
-                                <p class="text-[16px] text-[#707070] font-semibold">GoGo Groundhogs</p>
-                                <p class="text-[18px] text-[#707070] font-normal">0.035 ETH</p>
-                                <p class="text-[14px] text-[#A1A1A1] font-bold">By Groundhog Team</p>
-                            </div>
-                        </div>
+            <div
+                class=" pt-[60px] xl:px-28 h-full w-full flex flex-col sm:px-8 px-5 lg:px-12 md:flex-row md:justify-center md:items-center">
+                <div class="  hero1 md:w-1/2 xl:flex xl:flex-col xl:gap-12">
+                    <h1
+                        class=" header text-[24px] lg:text-[40px] lg:text-left lg:font-bold sm:text-[30px] text-center py-3 xl:text-[54px] font-semibold  xl:w-[80%] leading-tight">
+                        The Newest
+                        Genesis of Utility
+                        and Community</h1>
+                    <p
+                        class="text-[14px] sm:text-[18px] sm:text-center py-4 text-gray-700 md:text-[16px]  font-semibold md:w-[90%] sm:font-bold md:font-semibold lg:text-left">
+                        GoGo Groundhog
+                        pre-sale is coming soon and with
+                        only 2,500 available, grabbing a spot on the whitelist ensures you mint!</p>
+                    <div class="py-3 flex justify-around sm:justify-center sm:gap-5 lg:justify-start">
+                        <a href=""
+                            class="font-semibold text-[18px] border py-2 px-4 md:py-3 md:px-8 rounded-full xl bg-[#40C9F4] text-black">Join
+                            whitelist</a>
+                        <a href=""
+                            class="font-semibold text-[18px] border py-2 px-4 md:py-3 md:px-8 rounded-full  border-[#40C9F4] text-black">Discord</a>
                     </div>
                 </div>
+                <div id="hero2" class=" h-full md:w-1/2 relative flex justify-evenly items-center">
+                    <div
+                        class=" h-[220px] w-[160px] sm:h-[270px] sm:w-[180px]  md:h-[250px] md:w-[170px] p-2 sm:p-2 md:p-2 lg:p-3 lg:h-[310px] lg:w-[220px] xl:h-[370px] xl:w-[260px] rounded-md bg-white xl:p-5 flex-col flex justify-between md:absolute md:left-[30px] transform md:rotate-[-20deg] ">
+                        <img src="./assets/Hero-hog1.svg" alt="" class="rounded-md w-full">
+                        <p class="text-[14px] md:text-[16px] px-1 text-[#707070] font-semibold">GoGo Groundhogs</p>
+                        <p class=" text-[16px] md:text-[18px] px-1 text-[#707070] font-normal">0.035 ETH</p>
+                        <p class="text-[12px] md:text-[14px] px-1 text-[#A1A1A1] font-bold">By Groundhog Team</p>
+                    </div>
+                    <div
+                        class=" h-[220px] w-[160px] sm:h-[270px] sm:w-[180px] md:h-[250px] md:w-[170px]  p-2 sm:p-2 md:p-2 lg:p-3 lg:h-[310px] lg:w-[220px] xl:h-[370px] xl:w-[260px] rounded-md bg-white xl:p-5 flex-col flex justify-between md:absolute md:transform md:rotate-[20deg] md:right-[30px]  shadow-2xl">
+                        <img src="./assets/gogo-twitter.svg" alt="" class="rounded-md">
+                        <p class="text-[14px] md:text-[16px] px-1 text-[#707070] font-semibold">GoGo Groundhogs</p>
+                        <p class=" text-[16px] md:text-[18px] px-1 text-[#707070] font-normal">0.035 ETH</p>
+                        <p class="text-[12px] md:text-[14px] px-1 text-[#A1A1A1] font-bold">By Groundhog Team</p>
+                    </div>
+                </div>
+
             </div>
         </header>
-        <div class="xl:px-28 bg-[#253647] xl:py-20 flex flex-col items-center text-white">
-            <h2 class="text-[42px] font-normal text-white xl:py-2">Welcome to GoGo Groundhogs</h2>
-            <p class="text-[18px] font-bold text-white">Collection | Utility | Community</p>
-            <div class="flex gap-10 font-normal text-justify text-[18px] my-6">
-                <div class="">
-                    <p class="leading-10 xl:pb-6">The Genesis GoGo Groundhog Collection is a collection of 2,500 unique
-                        Non-Fungible Tokens (NFTs)
-                        on the Ethereum
-                        blockchain. Each one has its own specific set of unique rarities and attributes.</p>
-                    <p class="leading-10 ">There are no price tiers. Mint is just 0.035 ETH through our fair
-                        distribution model.</p>
-                </div>
-                <div>
-                    <p class="leading-10 xl:pb-6">The fair distribution model ensures thhat the entire Genesis GoGo
-                        Groundhog Collection is sold
-                        and distributed through
-                        random airdrop, via a publicly shared and verified Smart Contract.</p>
 
-                    <p class="leading-10">Track distribution here on the webiste, in our Discord server, or by following
-                        us on Twitter.
-                        We're completely
-                        transparent.
+
+        <div class="bg-[#253647]">
+
+            <div class=" py-5  bg-[#253647] xl:py-20 flex flex-col items-center text-white">
+                <div class="sm:px-8 px-5 lg:px-12 xl:px-28">
+
+                    <h2 class="xl:text-[42px] text-[20px] font-normal text-white xl:py-2 text-center">Welcome to GoGo Groundhogs
+                    </h2>
+                    <p class=" text-[14px] xl:text-[18px] text-center font-bold text-white">Collection | Utility | Community</p>
+                    <div
+                        class="flex flex-col md:flex-row gap-10 font-normal text-justify xl:text-[18px] text-[14px] my-6">
+                        <div class="">
+                            <p class="leading-8 xl:leading-10 xl:pb-6">The Genesis GoGo Groundhog Collection is a
+                                collection
+                                of
+                                2,500 unique
+                                Non-Fungible Tokens (NFTs)
+                                on the Ethereum
+                                blockchain. Each one has its own specific set of unique rarities and attributes.</p>
+                            <p class="leading-8 xl:leading-10 ">There are no price tiers. Mint is just 0.035 ETH through
+                                our
+                                fair
+                                distribution model.</p>
+                        </div>
+                        <div>
+                            <p class="leading-8 xl:leading-10 xl:pb-6">The fair distribution model ensures thhat the
+                                entire
+                                Genesis GoGo
+                                Groundhog Collection is sold
+                                and distributed through
+                                random airdrop, via a publicly shared and verified Smart Contract.</p>
+
+                            <p class="leading-8 xl:leading-10 ">Track distribution here on the webiste, in our Discord
+                                server,
+                                or by following
+                                us on Twitter.
+                                We're completely
+                                transparent.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="py-10 w-full overflow-hidden">
+                    <marquee behavior="" direction="" class="rotate-[-10deg]">
+                        <div class="flex gap-2 my-2 flex-shrink-0">
+                            <div
+                                class="h-[150px] min-w-[150px] sm:h-[200px] sm:min-w-[200px] xl:h-[300px] xl:min-w-[300px] ">
+                                <img class="w-full h-full object-cover" src="./assets/src/slider1-1.svg" alt=""></div>
+                            <div
+                                class="h-[150px] min-w-[150px] sm:h-[200px] sm:min-w-[200px] xl:h-[300px] xl:min-w-[300px] ">
+                                <img class="w-full h-full object-cover" src="./assets/src/slider1-2.svg" alt=""></div>
+                            <div
+                                class="h-[150px] min-w-[150px] sm:h-[200px] sm:min-w-[200px] xl:h-[300px] xl:min-w-[300px] ">
+                                <img class="w-full h-full object-cover" src="./assets/src/slider1-3.svg" alt=""></div>
+                            <div
+                                class="h-[150px] min-w-[150px] sm:h-[200px] sm:min-w-[200px] xl:h-[300px] xl:min-w-[300px] ">
+                                <img class="w-full h-full object-cover" src="./assets/src/slider1-4.svg" alt=""></div>
+                            <div
+                                class="h-[150px] min-w-[150px] sm:h-[200px] sm:min-w-[200px] xl:h-[300px] xl:min-w-[300px] ">
+                                <img class="w-full h-full object-cover" src="./assets/src/slider1-5.svg" alt=""></div>
+                            <div
+                                class="h-[150px] min-w-[150px] sm:h-[200px] sm:min-w-[200px] xl:h-[300px] xl:min-w-[300px] ">
+                                <img class="w-full h-full object-cover" src="./assets/src/slider1-6.svg" alt=""></div>
+                            <div
+                                class="h-[150px] min-w-[150px] sm:h-[200px] sm:min-w-[200px] xl:h-[300px] xl:min-w-[300px] ">
+                                <img class="w-full h-full object-cover" src="./assets/src/slider1-1.svg" alt=""></div>
+                            <div
+                                class="h-[150px] min-w-[150px] sm:h-[200px] sm:min-w-[200px] xl:h-[300px] xl:min-w-[300px] ">
+                                <img class="w-full h-full object-cover" src="./assets/src/slider1-2.svg" alt=""></div>
+                            <div
+                                class="h-[150px] min-w-[150px] sm:h-[200px] sm:min-w-[200px] xl:h-[300px] xl:min-w-[300px] ">
+                                <img class="w-full h-full object-cover" src="./assets/src/slider1-3.svg" alt=""></div>
+                            <div
+                                class="h-[150px] min-w-[150px] sm:h-[200px] sm:min-w-[200px] xl:h-[300px] xl:min-w-[300px] ">
+                                <img class="w-full h-full object-cover" src="./assets/src/slider1-4.svg" alt=""></div>
+                            <div
+                                class="h-[150px] min-w-[150px] sm:h-[200px] sm:min-w-[200px] xl:h-[300px] xl:min-w-[300px] ">
+                                <img class="w-full h-full object-cover" src="./assets/src/slider1-5.svg" alt=""></div>
+                            <div
+                                class="h-[150px] min-w-[150px] sm:h-[200px] sm:min-w-[200px] xl:h-[300px] xl:min-w-[300px] ">
+                                <img class="w-full h-full object-cover" src="./assets/src/slider1-6.svg" alt=""></div>
+                            <div
+                                class="h-[150px] min-w-[150px] sm:h-[200px] sm:min-w-[200px] xl:h-[300px] xl:min-w-[300px] ">
+                                <img class="w-full h-full object-cover" src="./assets/src/slider1-6.svg" alt=""></div>
+
+                        </div>
+                    </marquee>
+                    <marquee behavior="" direction="right" class="rotate-[-10deg]">
+                        <div class="flex gap-2 w-max">
+                            <div
+                                class="h-[150px] min-w-[150px] sm:h-[200px] sm:min-w-[200px] xl:h-[300px] xl:min-w-[300px] ">
+                                <img class="w-full h-full object-cover" src="./assets/src/slider2-2.svg" alt=""></div>
+                            <div
+                                class="h-[150px] min-w-[150px] sm:h-[200px] sm:min-w-[200px] xl:h-[300px] xl:min-w-[300px] ">
+                                <img class="w-full h-full object-cover" src="./assets/src/slider2-3.svg" alt=""></div>
+                            <div
+                                class="h-[150px] min-w-[150px] sm:h-[200px] sm:min-w-[200px] xl:h-[300px] xl:min-w-[300px] ">
+                                <img class="w-full h-full object-cover" src="./assets/src/slider2-4.svg" alt=""></div>
+                            <div
+                                class="h-[150px] min-w-[150px] sm:h-[200px] sm:min-w-[200px] xl:h-[300px] xl:min-w-[300px] ">
+                                <img class="w-full h-full object-cover" src="./assets/src/slider1-5.svg" alt=""></div>
+                            <div
+                                class="h-[150px] min-w-[150px] sm:h-[200px] sm:min-w-[200px] xl:h-[300px] xl:min-w-[300px] ">
+                                <img class="w-full h-full object-cover" src="./assets/src/slider1-3.svg" alt=""></div>
+                        </div>
+                </div>
+                </marquee>
+
+                <div class="sm:px-8 px-5 lg:px-12 xl:px-28 my-10 xl:my-24">
+                    <h3 class="xl:text-[42px] text-[20px]  xl:w-[30%] text-center font-normal">How can I mint a
+                        Groundhog?
+                    </h3>
+                    <p class="xl:w-[70%] leading-8 xl:leading-10 text-[14px] text-justify xl:text-[18px]">The GoGo
+                        Groundhog
+                        Pre-Sale, for those who are on the whitelist, starts soon.
+                        You can join the whitelist via our
+                        #📝-get-whitelisted discord channel or check this tweet.</p>
+                    <p></p>
+                </div>
+
+
+
+                <div class="header-content-2 my-10   flex justify-center relative">
+                    <div
+                        class="w-[340px] h-[350px] md:w-[350px] md:h-[360px]  xl:w-[518px] xl:h-[493px] z-40 bg-white rounded-md flex flex-col items-center justify-evenly">
+                        <p class="text-center text-[#0EAFD0] font-semibold md:text-lg  xl:text-[22px]">PRE-MINT
+                            IS CLOSED
+                        </p>
+                        <div class="flex card-time justify-evenly w-full">
+                            <div class="time border-[#C9DAF0] h-12 flex flex-col justify-center border-r p-4">
+                                <p
+                                    class=" text-center  text-[30px] md:text-5xl font-light xl:text-[56px] text-[#4F4F4F]">
+                                    07
+                                </p>
+                                <p class="text-center text-[13px] time-details  text-[#B6B8CE] xl:text-[16px]">DAYS</p>
+                            </div>
+                            <div class="time border-r border-[#C9DAF0] h-12 flex flex-col justify-center p-4">
+                                <p
+                                    class=" text-center text-[30px]   md:text-5xl font-light xl:text-[56px] text-[#4F4F4F]">
+                                    12
+                                </p>
+                                <p class="text-center time-details text-[13px] text-[#B6B8CE] xl:text-[16px]">HOURS</p>
+                            </div>
+                            <div class="time border-r border-[#C9DAF0] h-12 flex flex-col justify-center p-4">
+                                <p
+                                    class=" text-center text-[30px]  md:text-5xl font-light xl:text-[56px] text-[#4F4F4F]">
+                                    41
+                                </p>
+                                <p class="text-center time-details text-[13px] text-[#B6B8CE] xl:text-[16px]">MINUTES
+                                </p>
+                            </div>
+                            <div class="time h-12 flex flex-col justify-center p-4">
+                                <p
+                                    class=" text-center text-[30px]  md:text-5xl font-light xl:text-[56px] text-[#4F4F4F]">
+                                    06
+                                </p>
+                                <p class="text-center time-details text-[13px] text-[#B6B8CE] xl:text-[16px]">SECONDS
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="h-[180px] w-[90%] xl:w-[430px] xl:h-[215px]  border-[#A2A2DF] border relative">
+                            <p
+                                class="absolute -top-3 left-10 font-[raleway] text-[#A2A2DF] bg-white font-normal text-[16px] tracking-widest uppercase">
+                                connect
+                                wallet</p>
+                            <div class="h-full flex items-center justify-evenly opacity-20">
+                                <div class="mx-3 border h-[100px] w-[100px] border-[#C9DAF0] rounded-md p-1"><img
+                                        class="h-full" src="./assets/src/MetaMask_Fox 1.svg" alt="">
+                                </div>
+                                <div class="mx-3 border h-[100px] w-[100px] border-[#C9DAF0] rounded-md p-1"><img
+                                        class="h-full" src="./assets/src/coinbase wallet logo 1.svg" alt=""></div>
+                                <div class="mx-3 border h-[100px] w-[100px] border-[#C9DAF0] rounded-md p-1"><img
+                                        class="h-full" src="./assets/src/Exodus_Logo 1.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class=" w-[330px] h-[350px] md:w-[340px] md:h-[360px] xl:w-[500px] xl:h-[493px] absolute top-3 z-30  bg-white opacity-40 rounded-md flex flex-col items-center justify-evenly">
+                    </div>
+                    <div
+                        class=" w-[320px] h-[350px] md:w-[330px] md:h-[360px] xl:w-[480px] xl:h-[493px] absolute top-6   z-30  bg-white opacity-50 rounded-md flex flex-col items-center justify-evenly">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="text-white sm:px-8 px-5 lg:px-12">
+                <div>
+                    <h3 class="text-center text-[26px]">Want utility? You've got it.</h3>
+                    <p class="text-center text-[12px]">Benefits that haven't been seen a thousand times before</p>
+                </div>
+                <div
+                    class="grid md:grid-cols-[repeat(2,_minmax(330px,_1fr))] grid-cols-[minmax(300px,_1fr)] p-[3%] gap-8 xl:gap-20 font-light text-[14px]">
+                    <div>
+                        <h4 class="xl:text-[42px] xl:leading-[56px] font-bold py-3 text-[24px]">30% APR Value Interest
+                        </h4>
+                        <p class="leading-8 xl:pb-6 xl:text-[18px] xl:leading-[30px]">All Genesis Collection GoGo
+                            Groundhog holders will receive 30% (APR) USD value interest, year
+                            to date, on their
+                            Groundhog NFTs - from the original mint price - 0.035 ETH for as long as you have them! <br>
+                            <br>
+                            30% is way more than you get at almost any bank! This interest will be paid out in the form
+                            of DAI - a stablecoin that
+                            maintains the value of the United States dollar.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="xl:text-[42px] xl:leading-[56px] font-bold py-3 text-[24px]">Value No Matter Where
+                        </h4>
+                        <p class="text-justify leading-8 xl:pb-6 xl:text-[18px] xl:leading-[30px]">Interest payments
+                            follow the Groundhogs wherever they may go - always connected to whatever
+                            wallet the NFT is in. So, if
+                            you purchase a Groundhog retail, win one in a giveaway, use one for a giveaway, trade for a
+                            Groundhog, or just decide to
+                            give one to a friend - whoever has the Groundhog NFTs in their wallets will receive the 30%
+                            annual interest income.
+                            This is mazing REAL LIFE passive income just for owning Groundhogs. Who else pays you 30%
+                            for owning an NFT!?
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="xl:text-[42px] xl:leading-[56px] font-bold py-3 text-[24px]">GoGo Groundhog Babies
+                        </h4>
+                        <p class="text-justify leading-8 xl:text-[18px] xl:pb-6 xl:leading-[30px]">The Genesis GoGo
+                            Groundhogs Collection is headed into the Metaverse with Gensis GoGo
+                            Groundhog babies! For every Genesis
+                            GoGo Groundhog you have in your wallet, you will be issued a female GoGo Groundhog that will
+                            allow you to breed your
+                            assets and make new lil' Groundhog babies. <br> <br>
+
+                            Each Genesis Groundhog NFT in your wallet will earn you 100 tokens (official token name TBD)
+                            per month. The price to
+                            breed your Groundhogs will be 1,000 tokens. Users will have the ability to offer tokens on
+                            any Defi Exchange. Your baby
+                            Genesis Groundhogs will take 7 days to appear in your wallet after breeding. A DAO will be
+                            set up for Groundhog holders
+                            to allow the community to weigh in on future decisions regarding breeding, additional
+                            collections, etc. <br> <br>
+
+                            Genesis GoGo Groundhogs is heading into the metaverse with GoGo Groundhog Voxels - where you
+                            can put your breeding to
+                            use and fun!
+
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="xl:text-[42px] xl:leading-[56px] font-bold py-3 text-[24px]">Alpha Groundhog Club
+                        </h4>
+                        <p class="text-justify leading-8 xl:text-[18px] xl:pb-6 xl:leading-[30px]">The Genesis GoGo
+                            Groundhogs Collection is headed into the Metaverse with Gensis GoGo
+                            Groundhog babies! For every Genesis
+                            GoGo Groundhog you have in your wallet, you will be issued a female GoGo Groundhog that will
+                            allow you to breed your
+                            assets and make new lil' Groundhog babies. <br> <br>
+
+                            Each Genesis Groundhog NFT in your wallet will earn you 100 tokens (official token name TBD)
+                            per month. The price to
+                            breed your Groundhogs will be 1,000 tokens. Users will have the ability to offer tokens on
+                            any Defi Exchange. Your baby
+                            Genesis Groundhogs will take 7 days to appear in your wallet after breeding. A DAO will be
+                            set up for Groundhog holders
+                            to allow the community to weigh in on future decisions regarding breeding, additional
+                            collections, etc. <br> <br>
+
+                            Genesis GoGo Groundhogs is heading into the metaverse with GoGo Groundhog Voxels - where you
+                            can put your breeding to
+                            use and fun!
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-[#253647] text-white sm:px-8 px-5 lg:px-12">
+                <img class="w-3/5 lg:w-[200px] mx-auto my-4" src="./assets/src/hog-middle.svg" alt="">
+                <h2 class="font-bold text-[20px] sm:text-[22px] text-center">WE'RE ON OUR WAY</h2>
+                <p class="text-center text-[14px] sm:text-[16px] py-1 font-bold">ROADMAP 1.0</p>
+            </div>
+
+            <div class="containers sm:px-8 px-5 lg:px-12">
+                <div class="timeline">
+                    <ul>
+                        <li>
+                            <div class="timeline-content">
+                                <h3 class="date">0% Sold</h3>
+                                <p>250 Genesis GoGo Groundhog NFTs will be reserved specifically
+                                    for giveaways to Discord members! One Genesis GoGo
+                                    Groundhog NFT will be airdropped to 10 of our earliest Discord
+                                    members.
+                                    .</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-content">
+                                <h3 class="date">10% Sold</h3>
+                                <p>The GoGo Groundhog Discord server will be revamped and updated to facilitate
+                                    top-notch
+                                    communication in our community.
+                                    Rarity tools and listing will be added and updated.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-content">
+                                <h3 class="date">20% Sold</h3>
+                                <p>One Genesis GoGo Groundhog Collection NFT will be airdropped to 5 lucky winners who
+                                    were
+                                    early minters!
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-content">
+                                <h3 class="date">25% Sold</h3>
+                                <p>One Genesis GoGo Groundhog Collection NFT will be airdropped to 5 lucky winners who
+                                    were
+                                    early minters!
+                                </p>
+                            </div>
+                        <li>
+                            <div class="timeline-content">
+                                <h3 class="date">50% Sold</h3>
+                                <p>250 Genesis Ten lucky minters will be airdropped 1 Genesis
+                                    GoGo Groundhog Collection NFT. Official Genesis GoGo
+                                    Groundhog Collection merchandise store will be launched – full
+                                    of limited edition plushies, t-shirts, hoodies, and various other
+                                    fun goodies! Community members will be eligible to vote on a
+                                    1 ETH donation to a charity of the community’s choosing.
+
+                                </p>
+                            </div>
+                        <li>
+                            <div class="timeline-content">
+                                <h3 class="date">75% Sold</h3>
+                                <p>An additional 5 lucky minters will be airdropped 1 Genesis GoGo Groundhog Collection
+                                    NFT.
+
+                                </p>
+                            </div>
+                        <li>
+                            <div class="timeline-content">
+                                <h3 class="date">100% Sold</h3>
+                                <p>250 Genesis GoGo Groundhog Collection holders will receive
+                                    30% APR interest on their NFTs from the original mint price - in
+                                    the form of a DAI! This means if you spend $1000, you get back
+                                    $300 in the form of DAI, straight to the wallet where your
+                                    Groundhogs are!
+
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="relative">
+                <h4 class="text-center text-white font-bold text-[18px] md:text-[22px] xl:text-[42px] py-3">HEADED TO
+                    THE METAVERSE!</h4>
+                <div class="w-[2px] h-[60px] bg-white mb-3 mx-auto hidden md:block ">
+
+                </div>
+                <div class=" w-[80%]  md:max-w-[500px] bg-white mx-auto p-[20px] rounded-[10px]">
+                    <p class="text-[12px] leading-[18px] font-normal text-black">The Genesis GoGo Groundhogs Collection officially
+                        head into
+                        the Metaverse - with Voxel Groundhogs, Groundhog tokens,
+                        and the ability to breed your assets.
                     </p>
                 </div>
             </div>
-            <!-- <div class="sliding">
-                <div class="flex center">
-                    <div class=" h-72 p-4 "><img class="h-full border border-[#C9DAF0] p-4" src="./src/GoGo.svg" alt="">
+            <div class="sm:px-8 px-5 lg:px-12 mt-10">
+                <h5
+                    class="xl:text-[42px] lg:text-[32px] text-[24px] text-white font-semibold text-center md:text-left py-4">
+                    Meet the Team</h5>
+                <div class="flex flex-wrap gap-10 md:justify-between justify-center lg:justify-around">
+                    <div class="min-w-[270px] w-[285px] bg-white text-blue-50 p-4 rounded-md">
+                        <img src="./assets/src/ShayMalek1.svg" alt="" class="w-full">
+                        <h6 class="text-[16px] pt-2 text-[#707070]">Shay Malek</h6>
+                        <p class="text-[14px] py-3 text-[#A1A1A1]">Founder</p>
+                        <p class="text-[14px] text-[#707070] text-justify">Shay is a crypto enthusiast with a start in
+                            law school and a degree in business administration and analytics and loves
+                            all things blockchain. She branched out of corporate America to follow her passion and give
+                            the NFT space a run for
+                            their money.</p>
                     </div>
-                    <div class=" h-72 p-4 "><img class="h-full border border-[#C9DAF0] p-4" src="./src/GoGo.svg" alt="">
+                    <div class="min-w-[270px] w-[285px]  bg-white p-4 rounded-md">
+                        <img src="./assets/src/DeniseBrennan1.svg" alt="" class="w-full">
+                        <h6 class="text-[16px] pt-2 text-[#707070]">Shay Malek</h6>
+                        <p class="text-[14px] py-3 text-[#A1A1A1]">Founder</p>
+                        <p class="text-[14px] text-[#707070] text-justify">Shay is a crypto enthusiast with a start in
+                            law school and a degree in business administration and analytics and loves
+                            all things blockchain. She branched out of corporate America to follow her passion and give
+                            the NFT space a run for
+                            their money.</p>
                     </div>
-                    <div class=" h-72 p-4 "><img class="h-full border border-[#C9DAF0] p-4" src="./src/GoGo.svg" alt="">
+                    <div class="min-w-[270px] w-[285px]  bg-white p-4 rounded-md">
+                        <img src="./assets/src/DanteMateo1.svg" alt="" class="w-full">
+                        <h6 class="text-[16px] pt-2 text-[#707070]">Shay Malek</h6>
+                        <p class="text-[14px] py-3 text-[#A1A1A1]">Founder</p>
+                        <p class="text-[14px] text-[#707070] text-justify">Shay is a crypto enthusiast with a start in
+                            law school and a degree in business administration and analytics and loves
+                            all things blockchain. She branched out of corporate America to follow her passion and give
+                            the NFT space a run for
+                            their money.</p>
                     </div>
-                    <div class=" h-72 p-4 "><img class="h-full border border-[#C9DAF0] p-4" src="./src/GoGo.svg" alt="">
-                    </div>
-                    <div class=" h-72 p-4 "><img class="h-full border border-[#C9DAF0] p-4" src="./src/GoGo.svg" alt="">
-                    </div>
-                    <div class=" h-72 p-4 "><img class="h-full border border-[#C9DAF0] p-4" src="./src/GoGo.svg" alt="">
-                    </div>
-                    <div class=" h-72 p-4 "><img class="h-full border border-[#C9DAF0] p-4" src="./src/GoGo.svg" alt="">
-                    </div>
-                </div>
-            </div> -->
-            <h3 class="text-[42px] xl:w-[30%] text-center font-normal">How can I mint a Groundhog?</h3>
-            <p class="w-[70%] text-[18px]">The GoGo Groundhog Pre-Sale, for those who are on the whitelist, starts soon.
-                You can join the whitelist via our
-                #📝-get-whitelisted discord channel or check this tweet.</p>
-            <p></p>
-
-
-
-            <div class="header-content-2 md:w-1/2  flex justify-center lg:justify-end relative">
-                <div
-                    class=" w-[495px] xl:w-[518px] xl:h-[493px] md:h-96 md:w-96 z-40 bg-white rounded-md flex flex-col items-center justify-evenly">
-                    <p class="text-center text-[#0EAFD0] font-semibold md:text-lg  xl:text-[22px]">PRE-MINT
-                        IS CLOSED
-                    </p>
-                    <div class="flex card-time justify-evenly w-full">
-                        <div class="time border-[#C9DAF0] h-12 flex flex-col justify-center border-r p-5">
-                            <p class=" text-center text-3xl md:text-5xl font-light xl:text-[56px] text-[#4F4F4F]">07</p>
-                            <p class="text-center time-details  text-[#B6B8CE] xl:text-[16px]">DAYS</p>
-                        </div>
-                        <div class="time border-r border-[#C9DAF0] h-12 flex flex-col justify-center p-5">
-                            <p class=" text-center text-3xl  md:text-5xl font-light xl:text-[56px] text-[#4F4F4F]">12
-                            </p>
-                            <p class="text-center time-details text-[#B6B8CE] xl:text-[16px]">HOURS</p>
-                        </div>
-                        <div class="time border-r border-[#C9DAF0] h-12 flex flex-col justify-center p-5">
-                            <p class=" text-center text-3xl  md:text-5xl font-light xl:text-[56px] text-[#4F4F4F]">41
-                            </p>
-                            <p class="text-center time-details text-[#B6B8CE] xl:text-[16px]">MINUTES</p>
-                        </div>
-                        <div class="time h-12 flex flex-col justify-center p-5">
-                            <p class=" text-center text-3xl  md:text-5xl font-light xl:text-[56px] text-[#4F4F4F]">06
-                            </p>
-                            <p class="text-center time-details text-[#B6B8CE] xl:text-[16px]">SECONDS</p>
-                        </div>
-                    </div>
-
-                    <div class="xl:w-[430px] xl:h-[215px] border-[#A2A2DF] border relative">
-                        <p class="absolute -top-3 left-10 font-[raleway] text-[#A2A2DF] bg-white font-normal text-[16px] tracking-widest uppercase">connect
-                            wallet</p>
-                        <div class="h-full flex items-center justify-evenly opacity-20">
-                            <div class="mx-3 border h-[100px] w-[100px] border-[#C9DAF0] rounded-md p-1"><img
-                                    class="h-full" src="./assets/src/MetaMask_Fox 1.svg" alt="">
-                            </div>
-                            <div class="mx-3 border h-[100px] w-[100px] border-[#C9DAF0] rounded-md p-1"><img
-                                    class="h-full" src="./assets/src/coinbase wallet logo 1.svg" alt=""></div>
-                            <div class="mx-3 border h-[100px] w-[100px] border-[#C9DAF0] rounded-md p-1"><img
-                                    class="h-full" src="./assets/src/Exodus_Logo 1.svg" alt="">
-                            </div>
-                        </div>
+                    <div class="min-w-[270px] w-[285px]  bg-white p-4 rounded-md">
+                        <img src="./assets/gogo-twitter.svg" alt="" class="w-full">
+                        <h6 class="text-[16px] pt-2 text-[#707070]">Shay Malek</h6>
+                        <p class="text-[14px] py-3 text-[#A1A1A1]">Founder</p>
+                        <p class="text-[14px] text-[#707070] text-justify">Shay is a crypto enthusiast with a start in
+                            law school and a degree in business administration and analytics and loves
+                            all things blockchain. She branched out of corporate America to follow her passion and give
+                            the NFT space a run for
+                            their money.</p>
                     </div>
                 </div>
-
-                <div
-                    class=" w-[495px] xl:w-[500px] xl:h-[493px] md:h-96 md:w-96 absolute top-3 xl:right-2 z-30  bg-white opacity-40 rounded-md flex flex-col items-center justify-evenly">
-                </div>
-                <div
-                    class=" w-[495px] xl:w-[480px] xl:h-[493px] md:h-96 md:w-96 absolute top-6 xl:right-4 z-30  bg-white opacity-50 rounded-md flex flex-col items-center justify-evenly">
-                </div>
-                <!-- <div
-                    class=" w-[310px] h-[313px] absolute top-3 lg:right-3 -z-10 md:h-96 md:w-[360px] bg-white opacity-40 rounded-md ">
-                </div>
-                <div
-                    class=" w-[310px] h-[313px] absolute top-6 lg:right-5 -z-20 md:h-96 md:w-[340px] bg-white opacity-50 rounded-md ">
-                </div> -->
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -203,48 +720,32 @@
                 centerPadding: '60px',
                 slidesToShow: 4,
                 autoplay: true,
-                autoplaySpeed: 2000,
+                autoplaySpeed: 100,
                 arrows: false,
-                responsive: [
-                    {
-                        breakpoint: 1180,
-                        settings: {
-                            arrows: false,
-                            centerMode: true,
-                            centerPadding: '40px',
-                            slidesToShow: 4
-                        }
-                    },
-                    {
-                        breakpoint: 1000,
-                        settings: {
-                            arrows: false,
-                            centerMode: true,
-                            centerPadding: '40px',
-                            slidesToShow: 3
-                        }
-                    },
-                    {
-                        breakpoint: 700,
-                        settings: {
-                            arrows: false,
-                            centerMode: true,
-                            centerPadding: '40px',
-                            slidesToShow: 2
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            // arrows: false,
-                            // centerMode: true,
-                            // centerPadding: '40px',
-                            slidesToShow: 1
-                        }
-                    }
-                ]
             });
+
+            const nav = document.querySelector('nav')
+            const header = document.querySelector('.header')
+
+            const sectionOneOptions = {
+                rootMargin: "-230px 0px 0px 0px"
+            }
+
+            const sectionOneObserver = new IntersectionObserver(function (entries, sectionOneObserver) {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) {
+                        nav.classList.add('bg-[#253647]')
+                    } else {
+                        nav.classList.remove('bg-[#253647]')
+                    }
+                })
+            }, sectionOneOptions)
+
+            sectionOneObserver.observe(header)
+
+
         </script>
+        <script src="index.js"></script>
     </body>
 
 </html>
