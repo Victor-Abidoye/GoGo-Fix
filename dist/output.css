@@ -3021,6 +3021,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 1024px) {
+  .lg\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .lg\:h-\[90vh\] {
     height: 90vh;
   }
@@ -3035,6 +3040,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:w-\[200px\] {
     width: 200px;
+  }
+
+  .lg\:w-\[70\%\] {
+    width: 70%;
+  }
+
+  .lg\:w-\[50\%\] {
+    width: 50%;
   }
 
   .lg\:justify-start {
@@ -3186,6 +3199,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 480px;
   }
 
+  .xl\:w-\[50\%\] {
+    width: 50%;
+  }
+
   .xl\:min-w-\[300px\] {
     min-width: 300px;
   }
@@ -3239,6 +3256,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .xl\:pb-6 {
     padding-bottom: 1.5rem;
+  }
+
+  .xl\:text-center {
+    text-align: center;
   }
 
   .xl\:text-\[28px\] {
